@@ -19,23 +19,34 @@ module.exports = (sequelize, DataTypes) => {
   author.init({
     name: {
       type: DataTypes.STRING,
-      notEmpty: false
+      validate: {
+        notEmpty: false
+      }
     },
     age: {
       type: DataTypes.INTEGER,
-      isNumeric: false
+      validate: {
+        isNumeric: false,
+        min: 10
+      }
     },
     sex: {
       type: DataTypes.STRING,
-      isIn: [['foo', 'bar']]
+      validate: {
+        isIn: [['M', 'F']]
+      }
     },
     email: {
       type: DataTypes.STRING,
-      isEmail: true
+      validate: {
+        isEmail: true
+      }
     },
     website: {
       type: DataTypes.STRING,
-      isUrl: true
+      validate: {
+        isUrl: true
+      }
     },
     hometownId: {
       type: DataTypes.INTEGER
