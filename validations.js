@@ -1,5 +1,6 @@
 const models = require('./models')
 
+// console.log('test');
 const validationExercise = async () => {
   // this one should create an author no problem!
   // it's just to have an example of what a fully valid author looks like
@@ -15,7 +16,7 @@ const validationExercise = async () => {
   } catch (error) {
     console.log(error);
   }
-  
+
   // #1
   try {
     await models.author.create({
@@ -32,7 +33,7 @@ const validationExercise = async () => {
       console.log(error);
     }
   }
-    
+
   // #2
   try {
     await models.author.create({
@@ -49,7 +50,7 @@ const validationExercise = async () => {
       console.log(error);
     }
   }
-    
+
   // #3
   try {
     await models.author.create({
@@ -66,7 +67,7 @@ const validationExercise = async () => {
       console.log(error);
     }
   }
-    
+
   // #4
   try {
     await models.author.create({
@@ -83,7 +84,7 @@ const validationExercise = async () => {
       console.log(error);
     }
   }
-    
+
   // #5
   try {
     await models.author.create({
@@ -100,7 +101,7 @@ const validationExercise = async () => {
       console.log(error);
     }
   }
-    
+
   // #6
   try {
     await models.author.create({

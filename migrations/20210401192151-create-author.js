@@ -9,18 +9,24 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
+        notEmpty: false,
         type: Sequelize.STRING
       },
       age: {
+        isNumeric: false,
+        min: -10,
         type: Sequelize.INTEGER
       },
       sex: {
+        isIn: [['foo', 'bar']],
         type: Sequelize.STRING
       },
       email: {
+        isEmail: true,
         type: Sequelize.STRING
       },
       website: {
+        isUrl: true,
         type: Sequelize.STRING
       },
       createdAt: {
