@@ -58,18 +58,39 @@ const book = require('./models/book')
 
 // Get the subject of the 2001 Space Oddyssey
 
-const space = async () => {
-    const book = await models.book.findOne({
-        where: {
-            title: '2001: A Space Odyssey'
-        }
-    })
-    console.log(book);
-    const subject = await book.getSubject()
-    console.log(subject);
-}
-space()
+// const space = async () => {
+//     const book = await models.book.findOne({
+//         where: {
+//             title: '2001: A Space Odyssey'
+//         }
+//     })
+//     console.log(book);
+//     const subject = await book.getSubject()
+//     console.log(subject);
+// }
+// space()
 
 // get all subjects that Mark Lutz has written on
 
+// const markSubjects = async () => {
+//     const mark = await models.author.findOne({
+//         where: {
+//             name: 'Mark Lutz'
+//         }
+//     })
+//     const subjects = await mark.getSubjects()
+// }
+// markSubjects()
+
 // get all authors that have written books in the Childrens Books subject
+
+const author = async () => {
+    const children = await models.subject.findOne({
+        where: {
+            name: 'Childrens Books'
+        }
+    })
+    const subjects = await children.getAuthors()
+    console.log(subjects)
+}
+author()
